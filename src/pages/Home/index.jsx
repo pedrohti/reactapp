@@ -7,7 +7,8 @@ export function Home() {
 			<h1>Lista de Presença</h1>
 			<input type="text" name="" id="" placeholder="Digite o nome..." />
 			<button type="button">Adicionar</button>
-			<Card />
+			<Card name="Pedro" time="10:55:20" />
+			<Card name="Beatriz" time="13:15:10" />
 		</div>
 	);
 }
