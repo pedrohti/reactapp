@@ -20,11 +20,18 @@ export function Home() {
 	}
 
 	useEffect(() => {
-		fetch("https://api.github.com/users/pedrohti")
-			.then((response) => response.json())
-			.then((data) => {
-				setUser({ name: data.name, avatar: data.avatar_url });
-			});
+		async function fetchData() {
+			const response = await fetch("https://api.github.com/users/pedrohti");
+			const data = await response.json();
+			setUser({ name: data.name, avatar: data.avatar_url });
+		}
+
+		fetchData();
+		// fetch("https://api.github.com/users/pedrohti")
+		// 	.then((response) => response.json())
+		// 	.then((data) => {
+		// 		setUser({ name: data.name, avatar: data.avatar_url });
+		// 	});
 	}, []);
 
 	return (
